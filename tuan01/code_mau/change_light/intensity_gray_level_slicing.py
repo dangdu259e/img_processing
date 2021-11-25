@@ -1,0 +1,1 @@
+# 4. Cắt theo mức (Intensity – Gray level slicing)

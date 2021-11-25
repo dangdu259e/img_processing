@@ -1,0 +1,27 @@
+Link video buổi thực hành:
+https://drive.google.com/file/d/1e-b1-sm9JkUkwHCXe6_3OBeWxBwWxSV0/view
+Tôi đã gửi share invite cho các bạn qua mail.
+Chúng ta lưu ý yêu cầu với bài thực hành thứ nhất (hạn cuối để nộp: 23:59 Thứ hai- 18/10/2021):
+
+1. Gõ và chạy thử tất cả các đoạn code cho các  phương pháp đã được giáo viên hướng dẫn cung cấp
+(xem lại file PDF hướng dẫn thực hành bài 1).
+
+2. Viết đoạn chương trình đổi hệ màu từ RGB sang HSV. Đọc ảnh low_contract.jpg sau đó, lấy thông tin ảnh theo hệ màu HSV:
+2.a. Tăng độ bão hòa màu lên bằng 150% so với ảnh gốc, ghi ảnh kết quả vào low_contract_edit1.png
+2.b. Giảm độ sáng xuống còn 75% so với ảnh gốc, ghi ảnh kết quả vào low_contract_edit2.png
+
+3. Viết đoạn mã lệnh (python) kiểm tra xem histogram một ảnh có bị dồn tập trung vào khoảng nào hay không
+(tức là các điểm ảnh chỉ có giá trị cường độ xám trong một khoảng, phía ngoài khoảng đó không có điểm nào).
+
+
+4. Nếu có, hãy dùng các phương pháp sau để tăng/giảm độ tương phản:
+4.a. Nếu cường độ tập trung vào vùng thấp (ảnh tối) hoặc vùng cao (ảnh sáng):
+    hãy dùng biến đổi gamma với các giá trị gamma tương ứng (nhỏ hoặc lớn) để điều chỉnh độ tương phản
+    (các bạn cần tự phát hiện ảnh tập trung ở cường độ sáng cao hay thấp).
+
+4.b. Nếu cường độ tập trung vào vùng giữa, hãy dùng biến đổi tuyến tính từng khúc để điều chỉnh histogram.
+
+Thử với các ảnh low_contract.jpg, 7_1.png, contrast.jpg, too_bright.png và lưu ảnh kết quả với tên file khác nhau.
+
+5. Viết và thử nghiệm hàm cân bằng histogram với các ảnh:
+low_contract.jpg, 7_1.png, contrast.jpg, too_bright.png, 7.png, 8.png, 13.jpg và lưu kết quả ra các file ảnh tương ứng.
