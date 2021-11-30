@@ -28,7 +28,7 @@ def equalization_histogram_gray_img(img):
 
     cv2.imshow('Gray Image', img_gray)
     cv2.imshow('Image Equalized', img_equalized)
-
+    cv2.imwrite("./output_image/img_equalized.png", img_equalized)
     getHistogramGrap(img_gray, "Histogram Gray Image", 1)
     getHistogramGrap(img_equalized, "Histogram Img Equalized", 2)
     plt.show()
@@ -47,7 +47,7 @@ def equalization_histogram_BGR_img(img):
 
     cv2.imshow('Origin Img', img)
     cv2.imshow('Image Equalized', img_equalized)
-
+    cv2.imwrite("./output_image/img_equalized_BGR.png", img_equalized)
     getHistogramGrap(img, "Histogram Origin Image", 1)
     getHistogramGrap(img_equalized, "Histogram Equalization Img", 2)
     plt.show()
