@@ -15,16 +15,19 @@ clahe = cv2.createCLAHE(clipLimit=2)
 final_img = clahe.apply(image_bw)
 
 cv2.imshow("original img", image_bw)
+cv2.imwrite("./output_CLAHE/original_img.png", image_bw)
 hist_image_bw, bins_image_bw = np.histogram(image_bw.flatten(), bins=256, range=[0, 255])
 
 # Cân bằng histogram
 img_equalized = cv2.equalizeHist(image_bw)
 hist_Histogram_Img, bins_Histogram_Img = np.histogram(img_equalized.flatten(), bins=256, range=[0, 256])
 cv2.imshow("Histogram Img Equalized", img_equalized)
+cv2.imwrite("./output_CLAHE/img_equalized.png", img_equalized)
 
 # cân bằng CLAHE
 cv2.imshow("CLAHE image", final_img)
 hist_CLAHE_bw, bins_CLAHE_bw = np.histogram(final_img.flatten(), bins=256, range=[0, 255])
+cv2.imwrite("./output_CLAHE/img_CLAHE.png", final_img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -46,6 +49,6 @@ plt.subplots_adjust(left=0.1,
                     bottom=0.1,
                     right=0.9,
                     top=0.8,
-                    wspace=0.6,
-                    hspace=0.8)
+                    wspace=0.6,                    hspace=0.8)
+plt.savefig("./output_CLAHE/histogram.png")
 plt.show()

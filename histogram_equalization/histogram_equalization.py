@@ -19,6 +19,10 @@ def getHistogramGrap(img, title, number):
     plt.ylabel('pixel')
     plt.xlim([0.0, 255.0])  # Số mức xám biểu thị trên trục
     plt.plot(hist)
+    save_path = "./output_image/"
+    save_name = str(title).replace(" ", "")
+    save = save_path + save_name
+    plt.savefig(save)
 
 
 # Cân bằng histogram với ảnh gray và hiển thị
@@ -28,13 +32,12 @@ def equalization_histogram_gray_img(img):
 
     cv2.imshow('Gray Image', img_gray)
     cv2.imshow('Image Equalized', img_equalized)
-    cv2.imwrite("./output_image/img_equalized.png", img_equalized)
-    getHistogramGrap(img_gray, "Histogram Gray Image", 1)
-    getHistogramGrap(img_equalized, "Histogram Img Equalized", 2)
+    cv2.imwrite("./output_image/img_equalized_Gray.png", img_equalized)
+    getHistogramGrap(img_gray, "Histogram Origin Image Gray", 1)
+    getHistogramGrap(img_equalized, "Histogram Equalized Img Gray", 2)
     plt.show()
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-
 
 # Cân bằng histogram với ảnh BRG và hiển thị
 def equalization_histogram_BGR_img(img):
@@ -48,8 +51,8 @@ def equalization_histogram_BGR_img(img):
     cv2.imshow('Origin Img', img)
     cv2.imshow('Image Equalized', img_equalized)
     cv2.imwrite("./output_image/img_equalized_BGR.png", img_equalized)
-    getHistogramGrap(img, "Histogram Origin Image", 1)
-    getHistogramGrap(img_equalized, "Histogram Equalization Img", 2)
+    getHistogramGrap(img, "Histogram Origin Image BGR", 1)
+    getHistogramGrap(img_equalized, "Histogram Equalization Img BGR", 2)
     plt.show()
     cv2.waitKey(0)
     cv2.destroyAllWindows()
